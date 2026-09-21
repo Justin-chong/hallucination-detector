@@ -1,0 +1,254 @@
+[
+  {
+    "id": "h01",
+    "is_hallucination": true,
+    "hallucination_type": "政策偏差",
+    "severity": "P2",
+    "confidence": 0.82,
+    "evidence": [
+      "时效/数量偏差：KB=7 vs Reply=30"
+    ],
+    "triggered_rules": [
+      "R_TIME_DISTORT"
+    ]
+  },
+  {
+    "id": "h02",
+    "is_hallucination": true,
+    "hallucination_type": "事实编造",
+    "severity": "P1",
+    "confidence": 0.85,
+    "evidence": [
+      "参数数值不一致：KB=5.0 vs Reply=5.3"
+    ],
+    "triggered_rules": [
+      "R_PARAM_MISMATCH"
+    ]
+  },
+  {
+    "id": "h03",
+    "is_hallucination": true,
+    "hallucination_type": "能力越界",
+    "severity": "P2",
+    "confidence": 0.92,
+    "evidence": [
+      "KB 标记系统不具备该能力 (未接入[^，。\\s（）]+接口)，但回复使用了承诺性表述 (我(?:帮您|帮您|刚才)?(?:查|看|找|改|修改|处理|升级|提交|操作|申请|发))"
+    ],
+    "triggered_rules": [
+      "R_CAP_OVERREACH"
+    ]
+  },
+  {
+    "id": "h04",
+    "is_hallucination": true,
+    "hallucination_type": "政策偏差",
+    "severity": "P2",
+    "confidence": 0.85,
+    "evidence": [
+      "KB 明确否定 '纸质发票'，reply 在肯定上下文中提到 '纸质发票'"
+    ],
+    "triggered_rules": [
+      "R_KB_DENY_REPLY_AFFIRM"
+    ]
+  },
+  {
+    "id": "h05",
+    "is_hallucination": true,
+    "hallucination_type": "事实编造",
+    "severity": "P1",
+    "confidence": 0.9,
+    "evidence": [
+      "KB 含'无/未'模式 (无满\\d+\\s*减\\d+\\s*(?:的)?活动)，但 reply 给出了具体数值或实体"
+    ],
+    "triggered_rules": [
+      "R_FACT_FROM_EMPTY"
+    ]
+  },
+  {
+    "id": "h06",
+    "is_hallucination": true,
+    "hallucination_type": "事实编造",
+    "severity": "P1",
+    "confidence": 0.92,
+    "evidence": [
+      "材质/保修期等关键属性编造：reply 中的关键术语在 KB 中找不到或与 KB 矛盾"
+    ],
+    "triggered_rules": [
+      "R_MATERIAL_FAB"
+    ]
+  },
+  {
+    "id": "h07",
+    "is_hallucination": true,
+    "hallucination_type": "能力越界",
+    "severity": "P2",
+    "confidence": 0.88,
+    "evidence": [
+      "KB 含限制性条款 (不可[^，。\\s]+(?:告知|透露|提供|口头))，但 reply 绕过了限制给出了具体信息"
+    ],
+    "triggered_rules": [
+      "R_RESTRICTION_BYPASS"
+    ]
+  },
+  {
+    "id": "h08",
+    "is_hallucination": true,
+    "hallucination_type": "政策偏差",
+    "severity": "P2",
+    "confidence": 0.82,
+    "evidence": [
+      "时效/数量偏差：KB=24 vs Reply=48"
+    ],
+    "triggered_rules": [
+      "R_TIME_DISTORT"
+    ]
+  },
+  {
+    "id": "h09",
+    "is_hallucination": true,
+    "hallucination_type": "事实编造",
+    "severity": "P1",
+    "confidence": 0.9,
+    "evidence": [
+      "KB 含'无/未'模式 (未标注[^，。\\s]*)，但 reply 给出了具体数值或实体"
+    ],
+    "triggered_rules": [
+      "R_FACT_FROM_EMPTY"
+    ]
+  },
+  {
+    "id": "h10",
+    "is_hallucination": true,
+    "hallucination_type": "能力越界",
+    "severity": "P2",
+    "confidence": 0.92,
+    "evidence": [
+      "KB 标记系统不具备该能力 (未接入[^，。\\s（）]+接口)，但回复使用了承诺性表述 (我(?:帮您|帮您|刚才)?(?:查|看|找|改|修改|处理|升级|提交|操作|申请|发))"
+    ],
+    "triggered_rules": [
+      "R_CAP_OVERREACH"
+    ]
+  },
+  {
+    "id": "h11",
+    "is_hallucination": true,
+    "hallucination_type": "事实编造",
+    "severity": "P1",
+    "confidence": 0.9,
+    "evidence": [
+      "KB 含'无/未'模式 ((?:无|没有)\\s*[\\u4e00-\\u9fa5]{1,10}\\s*(?:政策|活动|功能|接口|优惠|认证|门店|规则|条款))，但 reply 给出了具体数值或实体"
+    ],
+    "triggered_rules": [
+      "R_FACT_FROM_EMPTY"
+    ]
+  },
+  {
+    "id": "h12",
+    "is_hallucination": false,
+    "hallucination_type": null,
+    "severity": null,
+    "confidence": 0.0,
+    "evidence": [],
+    "triggered_rules": []
+  },
+  {
+    "id": "h13",
+    "is_hallucination": true,
+    "hallucination_type": "安全误导",
+    "severity": "P0",
+    "confidence": 0.95,
+    "evidence": [
+      "KB 含安全警示关键词 ['孕妇', '哺乳期', '医生', '视黄醇']，但回复使用了 可以放心使用 等措辞消除了警示"
+    ],
+    "triggered_rules": [
+      "R_SAFETY_DISMISS"
+    ]
+  },
+  {
+    "id": "h14",
+    "is_hallucination": true,
+    "hallucination_type": "能力越界",
+    "severity": "P2",
+    "confidence": 0.92,
+    "evidence": [
+      "KB 标记系统不具备该能力 (未接入[^，。\\s（）]+接口)，但回复使用了承诺性表述 (已(?:帮您|为您|给您)(?:修改|处理|升级|提交|操作|申请|发|查|找|看|登记))"
+    ],
+    "triggered_rules": [
+      "R_CAP_OVERREACH"
+    ]
+  },
+  {
+    "id": "h15",
+    "is_hallucination": true,
+    "hallucination_type": "事实编造",
+    "severity": "P1",
+    "confidence": 0.9,
+    "evidence": [
+      "KB 含'无/未'模式 (未提及[^，。\\s]*)，但 reply 给出了具体数值或实体"
+    ],
+    "triggered_rules": [
+      "R_FACT_FROM_EMPTY"
+    ]
+  },
+  {
+    "id": "h16",
+    "is_hallucination": false,
+    "hallucination_type": null,
+    "severity": null,
+    "confidence": 0.0,
+    "evidence": [],
+    "triggered_rules": []
+  },
+  {
+    "id": "h17",
+    "is_hallucination": true,
+    "hallucination_type": "事实编造",
+    "severity": "P1",
+    "confidence": 0.93,
+    "evidence": [
+      "接口类型编造：KB 接口类型=USB-A，reply 声称=Type-C"
+    ],
+    "triggered_rules": [
+      "R_INTERFACE_FAB"
+    ]
+  },
+  {
+    "id": "h18",
+    "is_hallucination": true,
+    "hallucination_type": "能力越界",
+    "severity": "P2",
+    "confidence": 0.92,
+    "evidence": [
+      "KB 标记系统不具备该能力 (不具备[^，。\\s（）]+功能)，但回复使用了承诺性表述 (专属客服.*?联系您)"
+    ],
+    "triggered_rules": [
+      "R_CAP_OVERREACH"
+    ]
+  },
+  {
+    "id": "h19",
+    "is_hallucination": true,
+    "hallucination_type": "事实编造",
+    "severity": "P1",
+    "confidence": 0.9,
+    "evidence": [
+      "KB 含'无/未'模式 (当前无[^，。\\s]*)，但 reply 给出了具体数值或实体"
+    ],
+    "triggered_rules": [
+      "R_FACT_FROM_EMPTY"
+    ]
+  },
+  {
+    "id": "h20",
+    "is_hallucination": true,
+    "hallucination_type": "关键遗漏",
+    "severity": "P3",
+    "confidence": 0.65,
+    "evidence": [
+      "KB 含用户反馈/注意事项的关键数字，但 reply 给出了'标准/通用'答案且未提及 KB 数字"
+    ],
+    "triggered_rules": [
+      "R_OMIT_USER_FEEDBACK"
+    ]
+  }
+]
