@@ -224,17 +224,3 @@ python src/evaluate.py --predictions reports/result.json --ground-truth data/tas
    - 决策依据：幻觉分类场景下，"严重程度"比"细分类型"更重要
 
 ---
-
-## 九、面试展示建议
-
-提交到测评表单时，建议附带：
-
-1. **README.md**（本文档）
-2. **HTML 报告**（reports/report.html）— 打开即看，视觉效果好
-3. **开发工具截图** — IDE（VS Code / PyCharm）+ 终端运行截图
-4. **运行结果截图** — 报告关键页面截图（指标 dashboard、混淆矩阵）
-5. **可选**：GitHub 仓库链接（推荐）
-
----
-
-_本项目由 WorkBuddy AI 辅助完成 · 规则化方法 + 完整文档链 + 可视化报告_
